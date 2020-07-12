@@ -1,7 +1,7 @@
 # On The Fly Activity 
-  - Focus your routine only and just tracking you activity so can analyse later...
+  - Focus your routine only and just keep tracking activity so can analyse later.
   - This app's APIs for activity management of a user. User can create his 
-    activity with reminder in future and can move to archive also.
+    activity with reminder in future and can move to archive also and many more.
 
 ## Project setup
 ```
