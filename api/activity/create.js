@@ -1,11 +1,16 @@
-const Activity = require('../../models').Activity;
-module.exports = (req, res) => {
-  const newActivity = new Activity({ name: req.body.name })
-  newActivity.save()
+const Activity = require('../../models').Activity,
+  respone = require('../response');
 
-  res.send({
-    message: 'TODO: create activity!',
-    status: 200,
-    data: [{ activity: newActivity }]
-  })
+module.exports = (req, res) => {
+  new Activity({ name: req.body.name }).save()
+    .then(result => {
+      respone.success(res, result)
+    })
+    .catch(err => {
+      const messages = []
+      for (let field in err.errors) {
+        messages.push(err.errors[field].message)
+      }
+      respone.failure(res, messages)
+    })
 }

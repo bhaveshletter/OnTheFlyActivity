@@ -1,13 +1,12 @@
-const Activity = require('../../models').Activity;
+const Activity = require('../../models').Activity,
+  respone = require('../response');
+
 module.exports = (req, res) => {
-  Activity.findById(req.params.id, function(err, result){
-    if(err){
-    }
-    
-    res.send({
-      message: 'TODO: show activity!',
-      status: 200,
-      data: [{ activity: result }]
+  Activity.findById(req.params.id)
+    .then(function(result){
+      respone.success(res, [{ activity: result }])
     })
-  })
+    .catch(function(err){
+      respone.failure(res)
+    })
 }
