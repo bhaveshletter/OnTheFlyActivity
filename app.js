@@ -5,7 +5,10 @@ const express = require('express')
   , models = require('./models');
 
 app.use(express.json());
-// req.accepts('application/json')
+
+app.use((req, res, next) => {
+  next()
+});
 
 // START Routing
 
