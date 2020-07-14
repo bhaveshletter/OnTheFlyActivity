@@ -4,12 +4,11 @@ const Activity = require('../../models').Activity,
 module.exports = (req, res) => {
   let toBeUpdated = {}
 
-  if(req.body.name){
-    console.log(req.body.name)
+  if(req.body.name)
     toBeUpdated['name'] = req.body.name
-  }else if(req.body.remind_at){
+
+  if(req.body.remind_at)
     toBeUpdated['remind_at'] = req.body.remind_at
-  }
 
   Activity.findByIdAndUpdate(req.params.id, toBeUpdated, { new: true })
     .then(result => {

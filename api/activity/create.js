@@ -2,7 +2,7 @@ const Activity = require('../../models').Activity,
   response = require('../response');
 
 module.exports = (req, res) => {
-  Activity({ name: req.body.name }).save()
+  Activity.create({ name: req.body.name, remind_at: req.body.remind_at })
     .then(result => {
       response.success(res, result, 201)
     })

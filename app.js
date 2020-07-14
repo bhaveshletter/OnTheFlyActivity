@@ -4,9 +4,12 @@ const express = require('express')
   , api = require('./api')
   , models = require('./models');
 
+// moment().tz("Asia/Kolkata").format()
 app.use(express.json());
 
 app.use((req, res, next) => {
+  console.info('Query params: ', req.query)
+  console.info('Request body: ', req.body)
   next()
 });
 
