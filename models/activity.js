@@ -5,7 +5,7 @@ const activitySchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true
+      required: [true, 'Activity name must be provided.']
     },
     remind_at: {
       type: Date,

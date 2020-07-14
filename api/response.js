@@ -1,12 +1,12 @@
 module.exports = {
-  success: (res, result, message = 'success', status = 200) => {
+  success: (res, result = [], status = 200, message = 'success') => {
     res.send({
       message: message,
       status: status,
       data: result
     })
   },
-  failure: (res, result = [], message = 'failure', status = 404) => {
+  failure: (res, result = [], status = 404, message = 'failure') => {
     res.send({
       message: message,
       status: status,

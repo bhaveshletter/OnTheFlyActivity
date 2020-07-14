@@ -1,16 +1,16 @@
 const Activity = require('../../models').Activity,
-  respone = require('../response');
+  response = require('../response');
 
 module.exports = (req, res) => {
-  new Activity({ name: req.body.name }).save()
+  Activity({ name: req.body.name }).save()
     .then(result => {
-      respone.success(res, result)
+      response.success(res, result, 201)
     })
     .catch(err => {
       const messages = []
       for (let field in err.errors) {
         messages.push(err.errors[field].message)
       }
-      respone.failure(res, messages)
+      response.failure(res, messages, 400)
     })
 }
