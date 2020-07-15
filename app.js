@@ -2,7 +2,7 @@ const express = require('express')
   , app = express()
   , port = 8000
   , api = require('./api')
-  , models = require('./models');
+  , connectDb = require('./models').connectDb;
 
 // moment().tz("Asia/Kolkata").format()
 app.use(express.json());
@@ -24,7 +24,7 @@ app.delete('/delete/:id', api.destroy);
 
 // END Routing
 // const eraseDatabaseOnSync = true;
-models.connectDb().then(async() => {
+connectDb().then(async() => {
   // START if re-initialize database every express server start
   // if (eraseDatabaseOnSync) {
   //   await Promise.all([
