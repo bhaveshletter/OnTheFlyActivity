@@ -1,7 +1,8 @@
 # On The Fly Activity 
-  - Focus your routine only and just keep tracking activity so can analyse later.
+  - Focus users' routine activities and just keep tracking what user does throughout day.
   - This app's APIs for activity management of a user. User can create his 
-    activity with reminder in future and can move to archive also and many more.
+    activity with reminder of future and can move to archive also and many more.
+  - Users can check where and when did tasks, actions or activity later.
   ```
   NOTE: Node.js v10.15.3, Expressjs v4.17, Mongoose v5.9
   ```
