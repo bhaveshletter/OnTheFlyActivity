@@ -14,7 +14,7 @@ yarn install
 
 ### Run app
 ```
-node app.js
+nodemon app.js
 ```
 
 ### APIs documentation. All responses in json only
